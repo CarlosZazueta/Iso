@@ -1,0 +1,7 @@
+{
+  "name": "iso",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
