@@ -10,28 +10,27 @@ import { ApiServiceService } from '../../services/api-service.service';
 })
 export class LoginPagePage implements OnInit {
 
-  //Crear objeto TODO
-  private data: DatosLogin;
+  // Crear objeto TODO
+  private usuario = { empresa: 0, usuario: '', password: '', dispositivo: '' };
 
-  private usuario = {
-    empresa: '',
-    usuario: '',
-    password: '',
-    dispositivo: ''
-  }
-
-  slideOpts = {
-    allowSlidePrev: false,
-    allowSlideNext: false
+  private newData: DatosLogin = {
+    PasswordUsuario: this.usuario.password.trim(),
+    NombreUsuario: this.usuario.usuario.trim(),
+    idEmpresa: this.usuario.empresa,
+    dispositivo: this.usuario.dispositivo.trim()
   };
+
+  slideOpts = { allowSlidePrev: false, allowSlideNext: false };
 
   constructor(private loginService: ApiServiceService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSubmit() {
-    console.log(this.usuario);
+   this.loginService.postLoginAcces(this.newData)
+    .subscribe(res => {
+       console.log(JSON.stringify(res));
+     });
   }
 
 }

@@ -2,7 +2,7 @@
 
 export interface DatosLogin {
     PasswordUsuario: string;
-    NombreUsuario:   string;
-    idEmpresa:       number;
-    dispositivo:     string;
+    NombreUsuario: string;
+    idEmpresa: number;
+    dispositivo: string;
 }
