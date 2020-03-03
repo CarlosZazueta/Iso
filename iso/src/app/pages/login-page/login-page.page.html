@@ -1,47 +1,49 @@
 <ion-header no-border>
-  <div class="login-header ion-padding">
-    Inicio sesión
+  <div class="login-header">
+    <p>Inicio sesión<p>
   </div>
 </ion-header>
 
-<ion-content [scrollY]="true" color="primary" >
-  <ion-slides [options]="slideOpts" mode="md">
+<ion-content [scrollY]="true" color="primary">
+ <ion-slides [options]="slideOpts">
     <ion-slide>
-      <ion-row justify-content-center align-items-center>
-          <ion-col size="12">
-            <ion-card class="card ion-padding">
-              <ion-card-header>
-                <ion-card-subtitle>Favor de llenar los datos correctamente</ion-card-subtitle>
-              </ion-card-header>
-              <form #formulario="ngForm" (ngSubmit)="onSubmit()">
-                <ion-item>
-                  <ion-label position="floating">Empresa</ion-label>
-                  <ion-input required name="empresa" type="number" [(ngModel)]="usuario.empresa"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label position="floating">Usuario</ion-label>
-                  <ion-input required name="usuario" type="text" [(ngModel)]="usuario.usuario"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label position="floating">Password</ion-label>
-                  <ion-input required name="password" type="password" [(ngModel)]="usuario.password"></ion-input>
-                </ion-item>
-
-                <div class="remember-me">
-                  <ion-label>Recuerdame</ion-label>
-                  <ion-toggle checked slot="end"></ion-toggle>
-                </div>
-
-                <ion-button class="button" expand="full" fill="solid" shape="round" color="primary" type="submit" [disabled]="formulario.invalid">
-                  Login
-                </ion-button>
-                <ion-button id="forget" class="button" fill="clear" shape="round" color="primary">
-                  ¿Olvidaste tu constraseña?
-                </ion-button>
-              </form>
-            </ion-card>
-          </ion-col>
-        </ion-row>
+      <div class="cointainer">
+        <ion-card class="card ion-padding">
+          <ion-card-header>
+            <ion-card-subtitle color="danger">Favor de llenar los datos correctamente</ion-card-subtitle>
+          </ion-card-header>
+          <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+            <ion-item>
+              <ion-label position="floating">Empresa</ion-label>
+              <ion-input required name="empresa" type="number" [(ngModel)]="usuario.empresa"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Usuario</ion-label>
+              <ion-input required name="usuario" type="text" [(ngModel)]="usuario.usuario"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input required name="password" type="password" [(ngModel)]="usuario.password"></ion-input>
+            </ion-item>
+  
+            <div class="remember-me">
+              <ion-label>Recuerdame</ion-label>
+              <ion-toggle checked slot="end"></ion-toggle>
+            </div>
+            <div class="buttons">
+              <ion-button expand="block" size="default" class="button" fill="solid" shape="round" color="primary" type="submit" [disabled]="formulario.invalid">
+                Login
+              </ion-button>
+              <ion-button expand="block" size="default" class="button" fill="solid" shape="round" color="dark">
+                 QR Login
+              </ion-button>
+              <ion-button id="forget" class="button" fill="clear" shape="round" color="primary">
+                ¿Olvidaste tu constraseña?
+              </ion-button>
+            </div>
+          </form>
+        </ion-card>
+      </div>
     </ion-slide>
   </ion-slides>
 </ion-content>

@@ -6,3 +6,7 @@ export interface DatosLogin {
     idEmpresa: number;
     dispositivo: string;
 }
+
+export interface DatosRecuperacionPass {
+    Correo: string;
+}
