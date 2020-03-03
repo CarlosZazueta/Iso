@@ -20,13 +20,14 @@ form ion-item {
    margin-bottom: 20px !important;
 }
 
-.button {
-   margin-top: 30px !important;
+ion-button.button#forget {
+    text-transform: none !important;
+    font-size: 12px !important;
+    color: black !important;
 }
 
-.button .forget {
-    font-size: 14px !important;
-    color: black !important;
+.button {
+   margin-top: 30px !important;
 }
 
 ion-slides {
