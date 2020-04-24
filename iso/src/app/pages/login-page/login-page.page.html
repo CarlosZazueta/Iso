@@ -8,22 +8,22 @@
  <ion-slides [options]="slideOpts">
     <ion-slide>
       <div class="cointainer">
-        <ion-card class="card ion-padding">
+        <ion-card class="card">
           <ion-card-header>
             <ion-card-subtitle color="danger">Favor de llenar los datos correctamente</ion-card-subtitle>
           </ion-card-header>
           <form #formulario="ngForm" (ngSubmit)="onSubmit()">
             <ion-item>
               <ion-label position="floating">Empresa</ion-label>
-              <ion-input required name="empresa" type="number" [(ngModel)]="usuario.empresa"></ion-input>
+              <ion-input required name="empresa" type="number" [(ngModel)]="usuario.idEmpresa"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Usuario</ion-label>
-              <ion-input required name="usuario" type="text" [(ngModel)]="usuario.usuario"></ion-input>
+              <ion-input required name="usuario" type="text" [(ngModel)]="usuario.NombreUsuario"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label position="floating">Password</ion-label>
-              <ion-input required name="password" type="password" [(ngModel)]="usuario.password"></ion-input>
+              <ion-input required name="password" type="password" [(ngModel)]="usuario.PasswordUsuario"></ion-input>
             </ion-item>
   
             <div class="remember-me">
@@ -31,13 +31,13 @@
               <ion-toggle checked slot="end"></ion-toggle>
             </div>
             <div class="buttons">
-              <ion-button expand="block" size="default" class="button" fill="solid" shape="round" color="primary" type="submit" [disabled]="formulario.invalid">
+              <ion-button expand="block" size="default" class="button" fill="solid" shape="default" color="primary" type="submit" [disabled]="formulario.invalid">
                 Login
               </ion-button>
-              <ion-button expand="block" size="default" class="button" fill="solid" shape="round" color="dark">
+              <ion-button (click)="scanner()" expand="block" size="default" class="button QR" fill="solid" shape="default" color="dark">
                  QR Login
               </ion-button>
-              <ion-button id="forget" class="button" fill="clear" shape="round" color="primary">
+              <ion-button routerLink="/forgot-password" id="forget" class="button" fill="clear" shape="round" color="primary">
                 ¿Olvidaste tu constraseña?
               </ion-button>
             </div>

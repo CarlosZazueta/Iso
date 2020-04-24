@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiLoginUrl: 'https://isoapi.azurewebsites.net/SISTEMA/Login/Acceso',
-  apiForgottenPassword: 'poner/url/aqui'
+  apiForgottenPassword: 'https://isoapi.azurewebsites.net/SISTEMA/Login/Recuperar'
 };
 
 /*
