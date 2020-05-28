@@ -5,6 +5,41 @@ export interface DatosLogin {
     PasswordUsuario: string;
     NombreUsuario: string;
     idEmpresa: number;
+    idUsuario?: number;
     dispositivo: string;
-    tipo?: string
+    Table?: any;
+    tipo?: string;
+    data?: string;
+}
+
+export interface DatosListaCasos {
+    idUsuario: number;
+    idCaso?: number;
+    idFormato?: number;
+    Autorizado?: number;
+    data?: string;
+    tipo?: string;
+    NombreCorto?: string;
+    NombreUsuario?: string;
+    docket?: string;
+    FechaSubida?: string;
+    Table?: any;
+    Email?: string;
+    Estatus?: string;
+    EstadoAutorizacion?: string;
+    NumeroEmpleado?: number;
+    Nombre?: string;
+    Extencion?: string;
+}
+
+export interface DatosFileDownload {
+    filename: string;
+    idCaso: string;
+    idusuario: string;
+}
+
+export interface DatosFileUpload {
+    idUsuario: number;
+    idCaso: number;
+    File: string;
 }

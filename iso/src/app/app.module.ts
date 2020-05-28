@@ -16,13 +16,17 @@ import { Device } from '@ionic-native/device/ngx';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { ComponentsModule } from './components/components.module';
 
+import { File } from '@ionic-native/file/ngx';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule, 
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     HttpClientModule,
     ComponentsModule
   ],
@@ -31,6 +35,8 @@ import { ComponentsModule } from './components/components.module';
     SplashScreen,
     InAppBrowser,
     Device,
+    File,
+    FileTransfer,
     BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

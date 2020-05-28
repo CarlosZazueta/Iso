@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Archivo</ion-title>
+
+    <ion-button (click)="dismiss()" fill="clear" slot="end" shape="round">
+      cancelar
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cointainer">
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-subtitle color="danger">Favor de llenar los datos correctamente</ion-card-subtitle>
+      </ion-card-header>
+      <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">ID Usuario</ion-label>
+          <ion-input required name="empresa" type="number" [(ngModel)]="usuario.idUsuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">ID Caso</ion-label>
+          <ion-input required name="usuario" type="number" [(ngModel)]="usuario.idCaso"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input id="real-file-button" required name="file" type="file" (change)="handleUpload($event)" [(ngModel)]="usuario.File" ></ion-input>
+        </ion-item>
+        <div class="buttons">
+          <ion-button expand="block" size="default" class="button" fill="solid" shape="default" color="primary" type="submit" [disabled]="formulario.invalid">
+            Subir Archivo
+          </ion-button>
+        </div>
+      </form>
+    </ion-card>
+  </div>
+</ion-content>

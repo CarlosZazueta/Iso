@@ -8,14 +8,20 @@ import { ControlPageRoutingModule } from './control-routing.module';
 
 import { ControlPage } from './control.page';
 import { ComponentsModule } from '../../components/components.module';
+import { AddFilePage } from '../add-file/add-file.page';
+import { AddFilePageModule } from '../add-file/add-file.module';
 
 @NgModule({
+  entryComponents: [
+    AddFilePage
+  ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     ControlPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    AddFilePageModule
   ],
   declarations: [ControlPage]
 })

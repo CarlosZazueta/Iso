@@ -14,7 +14,15 @@ const routes: Routes = [
   {
     path: 'control',
     loadChildren: () => import('./pages/control/control.module').then( m => m.ControlPageModule)
+  },  {
+    path: 'busqueda-especifica',
+    loadChildren: () => import('./pages/busqueda-especifica/busqueda-especifica.module').then( m => m.BusquedaEspecificaPageModule)
   },
+  {
+    path: 'add-file',
+    loadChildren: () => import('./pages/add-file/add-file.module').then( m => m.AddFilePageModule)
+  }
+
 ];
 
 @NgModule({

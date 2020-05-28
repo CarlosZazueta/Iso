@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/control"></ion-back-button>
+    </ion-buttons>
+   
+    <ion-title>Resultados de busqueda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+        <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" *ngFor="let caso of casos">
+            <ion-card>
+                <ion-card-header>
+                    <div class="separator">
+                        <ion-card-subtitle color="primary"># {{caso.idFormato}}</ion-card-subtitle>
+                        <ion-label>{{caso.FechaSubida}}</ion-label>
+                    </div>
+                    <div class="separator">
+                      <ion-card-title>{{caso.Nombre}}</ion-card-title>
+                      <a color="primary" (click)="downloadFile(caso)" class="download" href={{href}}>Descargar</a>
+                    </div>
+                    <br>
+                    <div class="separator">
+                        <ion-label><b>Solicitante: </b></ion-label>
+                        <ion-label><b>Estado: </b></ion-label>
+                    </div>
+                    <div class="separator">
+                        <ion-label>{{caso.NombreUsuario}}</ion-label>
+                        <ion-label *ngIf="caso.Autorizado == 0" color="warning">Pendiente</ion-label>
+                        <ion-label *ngIf="caso.Autorizado == 1" color="success">Autorizado</ion-label>
+                        <ion-label *ngIf="caso.Autorizado == 2" color="danger">Rechazado</ion-label>
+                    </div>
+                </ion-card-header>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+</ion-content>

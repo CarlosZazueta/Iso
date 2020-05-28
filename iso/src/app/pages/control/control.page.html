@@ -1,5 +1,44 @@
-<app-header titulo="Control"></app-header>
+<app-header class="ion-no-border" titulo="Casos"></app-header>
 
-<ion-content>
+<ion-segment [scrollable]="true" mode="md" (ionChange)="cambioCategoria($event)">
+    <ion-segment-button mode="md" *ngFor="let categoria of categorias" [value]="categoria">
+        <ion-label class="opciones">{{categoria}}</ion-label>
+    </ion-segment-button>
+</ion-segment>
 
+<ion-content>        
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="addFile()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" *ngFor="let caso of filter">
+                <ion-card *ngIf="caso.Nombre !== null">
+                    <ion-card-header>
+                        <div class="separator">
+                            <ion-card-subtitle color="primary"># {{caso.idFormato}}</ion-card-subtitle>
+                            <ion-label>{{caso.FechaSubida}}</ion-label>
+                        </div>
+                        <div class="separator">
+                            <ion-card-title>{{caso.Nombre}}</ion-card-title>
+                            <a color="primary" (click)="downloadFile(caso)" class="download" href={{href}}>Descargar</a>
+                        </div>
+                        <br>
+                        <div class="separator">
+                            <ion-label><b>Solicitante: </b></ion-label>
+                            <ion-label><b>Estado: </b></ion-label>
+                        </div>
+                        <div class="separator">
+                            <ion-label>{{caso.NombreUsuario}}</ion-label>
+                            <ion-label *ngIf="caso.EstadoAutorizacion == 'Pendiente'" color="warning">{{caso.EstadoAutorizacion}}</ion-label>
+                            <ion-label *ngIf="caso.EstadoAutorizacion == 'Autorizado'" color="success">{{caso.EstadoAutorizacion}}</ion-label>
+                            <ion-label *ngIf="caso.EstadoAutorizacion == 'Rechazado'" color="danger">{{caso.EstadoAutorizacion}}</ion-label>
+                        </div>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

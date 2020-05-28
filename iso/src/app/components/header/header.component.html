@@ -4,8 +4,11 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-
-    <ion-title color="primary" text-capitalize> {{ titulo }} </ion-title>
+    
+    <ion-input  slot="end" shape="round" placeholder="Nombre" [(ngModel)]="busqueda" name="busqueda" type="text"></ion-input >
+    <ion-button (click)="openBusquedaEspecificaPage()" slot="end" expand="block" fill="outline" shape="round">
+      Buscar
+    </ion-button>
   </ion-toolbar>
   
 </ion-header>
