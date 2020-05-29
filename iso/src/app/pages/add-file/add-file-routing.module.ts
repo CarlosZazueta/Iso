@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddFilePage } from './add-file.page';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -18,7 +18,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule,
     IonicModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule],
 })

@@ -8,6 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { HttpClientModule } from '@angular/common/http'
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { AppComponent } from './app.component';
@@ -28,7 +30,9 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,

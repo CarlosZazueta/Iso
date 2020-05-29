@@ -19,11 +19,13 @@ export class FilesService {
 
   constructor(private http: HttpClient) { }
 
-  postUploadfile(data: DatosFileUpload, file: object) {
+  postUploadfile(data: DatosFileUpload, file: string) {
     const params = new HttpParams()
     .set('idCaso', data.idCaso.toString())
     .set('idusuario', data.idUsuario.toString());
+    const formData = new FormData();
+    formData.append('File',file);
 
-    return this.http.post<DatosFileUpload>(apiFileUpload, file, {headers, observe: 'response', params});
+    return this.http.post<DatosFileUpload>(apiFileUpload+`?idCaso=${data.idCaso}&idusuario=${data.idUsuario}`, formData);
   }
 }
